@@ -1,2 +1,2 @@
-rootProject.name = "Ejemplo2"
+rootProject.name = "QaAutomatizacion"
 

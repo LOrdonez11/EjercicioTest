@@ -10,20 +10,25 @@ import java.time.Duration;
 
 public class BaseTest {
     WebDriver driver;
-    protected Login login;
-    protected Inicio inicio;
+    protected TestCaseProd1 testCaseProd1;
+    protected Carrito1 carrito1;
+    protected TestCaseProd2 testCaseProd2;
+
 
     @BeforeMethod
     public void setup(){
+        //aqui estoy guardando el chromedriver
         System.setProperty("webdriver.chrome.driver", "/Users/lauraordonez/programas/chromedriver");
 
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Variables.TIME_OUT));
         driver.manage().window().maximize();
-        driver.get(Variables.BASE_TEST);
+        driver.get(Variables.BASE_URL);
 
-        login = new Login(driver);
-        inicio = new Inicio(driver);
+        testCaseProd1 = new TestCaseProd1(driver);
+        carrito1 = new Carrito1(driver);
+        testCaseProd2 = new TestCaseProd2(driver);
+
     }
     @AfterMethod
     public void bajar(){
